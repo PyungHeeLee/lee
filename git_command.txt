@@ -27,3 +27,12 @@ git branch -M main -> 기본 브랜치 이름
 
 git push -u 주소 main
 git remote add 변수 주소 -> 주소를 변수로 저장
+git clone 주소
+git pull 주소 브랜치
+
+
+
+git stash (list)
+git stash clear
+git stash save '메모'
+git stash pop -> 불러오기
