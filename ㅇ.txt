@@ -1,9 +1,0 @@
-git init
-
-git add app.txt
-git commit -m '메시지아아아아ㅏ'
-
-git add .
-
-git status
-git log
