@@ -1,0 +1,17 @@
+git init
+
+git add app.txt
+git commit -m '메시지아아아아ㅏ'
+
+git add .
+
+git status
+git log
+
+git diff
+git difftool
+
+git switch aaaa
+git switch main
+git merge aaaa (메인에서 할것)
+
