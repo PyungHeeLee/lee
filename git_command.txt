@@ -2,24 +2,23 @@ git init
 
 git add app.txt
 git add .
-git commit -m '메시지아아아아ㅏ'
-
+git commit -m '아아아아ㅏ'
 
 git status
 git log
-git log --oneline --all
+git log --oneline (--all)
 
 git diff
 git difftool
 
 git branch aaaaa -> 사본생성
 git switch aaaaa -> 사본으로 이동
-git switch main
-git merge aaaa (main으로 이동 후)
+git switch main -> 복귀
+git merge aaaa (main으로 이동 후 통합)
 
 git restore 파일이름
 git restore --source 커밋아이디 파일이름
-git revert 커밋아이디1 2 3 ,,
+git revert 커밋아이디1 2 ,,
 git revert HEAD
 git reset --hard 커밋아이디
 git reset --soft 커밋아이디
@@ -27,4 +26,4 @@ git reset --soft 커밋아이디
 git branch -M main -> 기본 브랜치 이름
 
 git push -u 주소 main
-git remote add 변수 주소
+git remote add 변수 주소 -> 주소를 변수로 저장
