@@ -1,0 +1,135 @@
+웹 스크래핑 -> 필요한 부분만
+웹 크롤링 -> 허용된 링크에 대해서 모든 정보 가져옴
+웹 -> html css js
+    html: 뼈대 (XPath: element의 간단한 경로)
+    css: 인테리어
+    js: 다양한 활동 가능케 함
+
+html (hyper text markup language)
+    w3schools.com 참고
+
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>나도코딩</title>
+        </head>
+        <body>
+            <h1>안녕하세요</h1>
+            <input type="text" value='id'>
+            <input type="password">
+            <input type="button" value="login">
+            <a href="http://google.com">구글로 이동하기</a>
+        </body>
+    </html>
+
+XPath
+    /html/body/div/div ,, /div/span/a ,,
+    //*[@id='login']
+        * -> 학교 학년 등 모든 범위에서 탐색
+        id -> unique 하기 때문에 간편하게 검색 가능
+
+    /학교/학년/학과/학생
+    //*[@학번='201827537']
+        학번 -> unique
+
+    <학교 이름 = '부산대학교'>
+        <학년 value = '1학년'>
+            <학과 value = '기계공학부'>
+                <학생 성별 = '남' value = '202227305>김민규</학생>
+            </학과>
+        </학년>
+
+        <학년 value = '3학년'>
+            <학과 value = '산업공학과'>
+                <학생 성별 = '남' value = '201827537'>이평희</학생>
+            </학과>
+        </학년>
+    </학교>
+
+크롬
+    우클릭 -> 검사 -> html 각 element 확인 가능
+
+리퀘스트 (one of 패키지)
+    터미널 -> pip install requests
+    scrap.py 참고
+import requests
+res1 = requests.get('http://naver.com')
+res2 = requests.get('http://google.com')
+print('응답:', res2.status_code) # 200이어야 정상
+
+if res2.status_code == requests.codes.ok:
+    print('정상')
+else:
+    print('비정상, 에러코드:', res2.status_code)
+
+res2.raise_for_status() # 200이어야 함 -> 보통 위 requests get 문장과 함께 씀
+print('웹 스크래핑 시작')
+print(len(res2.text))
+print(res2.text)
+
+with open('mygoogle.html', 'w', encoding='utf8') as f: # 덮어쓰기 모드
+    f.write(res2.text)
+
+
+정규식
+    jung_gyu_sik.py 참고
+import re
+p = re.compile('ca.e')
+    # . -> 하나의 문자 의미 (ca.e 등)
+    # ^ -> 문자열의 시작 (^de 등)
+    # $ -> 문자열의 끝
+
+user agent
+    user_agent.py 참고
+		requests.get 에 사용됨
+    requests 통해 웹 정보 불러오면 상태값이 이상하고 올바른 정보도 안 줌
+    what is my user agent? 사이트 접속하면 유저(브라우저) 정보 확인 가능
+    그 정보 가지고 제대로 된 정보를 얻고 스크패핑 할수 있음
+
+네이버 웹툰 (bs4)
+    webtoon.py 참고
+
+bs4 활용
+    webtoons.py 참고
+    beautifulsoup documentary 사이트 참고
+    절차:
+        import requests, from bs4 import beautifulsoup
+        url 뽑기
+        res = requests.get(url) (필요하면 headers 사용)
+        soup = BeautifulSoup(res.text, 'lxml')
+        find, find_all 등 후행함수 사용 (find 중첩 가능)
+            get_text() 후행하면 텍스트 출력
+            items = soup.find_all('li', attrs={'class':'search-product'})
+쿠팡
+    http 메소드
+        get 방식 -> url -> search?minPrice=1000&maxPrice=5000
+        post -> body
+    coupang.py 참고
+
+다음 이미지
+
+csv (네이버 금융)
+    stock.py 참고
+
+selenium
+    selenium.py 참고
+    selenium with python 사이트 참고
+    selenium 심화 (네이버 로그인)
+    selenium 심화 (구글 무비)
+
+headless 크롬
+    background에서 크롬 사용
+
+wrap up
+
+퀴즈 (다음 부동산)
+
+프로젝트
+
+오늘의 날씨 (네이버 날씨)
+
+헤드라인 뉴스 (네이버 뉴스)
+
+it 일반 뉴스 (네이버 뉴스)
+
+오늘의 영어회화 (해커스 영어)
