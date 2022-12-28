@@ -1,0 +1,440 @@
+자료형:
+    문자열에 *4 등의 연산 가능
+    not + boolean -> 부정
+    str(숫자)
+    int(숫자)
+    + 연산은 같은 자료형끼리만
+    type(변수) -> 타입 확인
+
+주석
+    #주석
+
+    '''주
+    석'''
+    
+    드로그 후 ctr+/ -> 일괄 주석
+
+퀴즈1
+
+연산자
+    ** -> 거듭제곱
+    / -> 나누기
+    // -> 몫
+    % -> 나머지
+    >= -> 이상
+    == -> 같다?
+    != -> 같지않다?
+    and, & -> and연산
+    or, | -> or연산
+    *= - 연산 후 할당
+
+랜덤함수
+    rand() -> 0~1 실수
+    rand() * n -> 0.0 ~ n.0 사이 실수
+    randrange(n, m) -> n ~ m-1 정수
+    randint(n,m) -> n~m 정수
+    shffle(list) -> 섞기
+    sample(list, 1) -> 1개 샘플링
+
+퀴즈2
+
+문자열
+    ''' ㅇㅇ ''' -> 여러줄 거느리는 문자열
+    aa[0:3] -> aa 문자열 첫 문자에서 4개 추출
+    aa[-1] -> 뒤에서 첫 문자
+
+    aa.lower() -> 소문자 변환
+    aa[3].isupper() -> 대소 판별
+
+    len(aa) -> 문자 길이
+    
+    aa.replace('abc', 'qwe') -> 문자 대체
+    aa.index('a') -> a 문자 위치
+    aa.index('a', 5) -> 6번째 문자에서부터 a 위치
+    aa.find('a') -> 동일 (없으면 -1)
+    aa.count('a') -> a 몇번 나옴?
+
+문자열 포맷
+    print('ddddd %d dddd' % 20) -> %d 위치에 20 삽입 (숫자)
+    print('ddddd %s dddd' % '20') -> %d 위치에 20 삽입 (문자열)
+    print('ddddd %c dddd' % '20') -> %d 위치에 2 삽입 (첫 문자열)
+    %s 쓰면 다 됨
+    print('ddddd %s ddd %s dd' % ('20', '30')
+
+    print('qqqq {} ddd'.format(30))
+    print('qqqq {0} ddd{1} qqq'.format(30, 40)) -> {} 안에 숫자 없어도 됨
+    print('qqqq {age} ddd{weight} qqq'.format(age=20, weight=40))
+
+    age=20
+    weight = 40
+    print(f'dddd {age}, {weight} dddd')
+
+탈출 문자
+    print('ddd \n dddd') -> 줄바꿈
+    print("dddd 'd' dddd")
+    print('dddd \'dd' dddd')
+    print('dddd \\ddddd') -> \\는 \로 나옴
+    print('dddd \r ddd') -> 커서를 맨 앞으로
+    print('dddd \b dddd') -> 앞 한글자 삭제
+    print('dddd \t dddd') -> tap 친거와 마찬가지
+    print('ddddd \
+    ddddddd) -> 마치 줄 안바꾼 것처럼 출력 (print문 아니어도 사용 가능)
+
+퀴즈3
+
+리스트 (이질적 자료 모음)
+    ls = [1,2,3,4]
+    ls = ['fd', 'ww', 'ew', 'fv']
+    ls.append('ff')
+    ls.insert('ea', 1) -> 2번째 자리에 ea 밀어넣음
+    ls.pop()
+    ls.pop(3) -> 4번째 원소 pop
+    ls.count('ww')
+    ls.sort() -> 오름차순
+    ls.reverse -> 뒤집기
+    ls.clear() -> 비우기
+    ls.extend(ls2) -> 리스트 병합
+    isinstance('d', ls) -> 'd'가 ls 안에 있는지 판별
+
+사전 (키의 중복 혀용 x)
+    cabinet = {'a-33': 'dd', 'b-101': 'rr'} -> 키: 33, 101
+    cabinet[33]
+    cabinet[101]
+    cabinet.get(3) -> 3키 없으면 넘김
+    cabinet.get(3, '빔') -> 3키 없으면 빔 이라 표시
+    print(3 in cabinet) -> false
+    cabinet['a-33'] = 'ww' -> a-33 키의 값을 ww로 대체
+    del cabinet['a-33'] -> 값 비움
+    cabinet.keys()
+    cabinet.values()
+    cabinet.items()
+    cabinet.clear()
+
+튜플
+    menu = ('eee', 'rre')
+    print(menu[1])
+    menu, price, taste = ('food', 5600, 'good') -> 동시 생성
+
+집합 -> 중복 안됨, 순서 없음
+    set = {1,2,3,3,3,3}
+    print(set)
+    set = set(ls) -> 리스트를 집합으로
+
+    print(set1 & set2) -> 교집합
+    set.intersection(set2)
+
+    print(set1 | set2) -> 합집합
+    set.union(set2)
+    
+    set1 - set2 -> 차집합
+    s1.difference(s2)
+
+    set.add('qq') -> 추가
+    set.remove('ww') -> 삭제
+
+range
+    rg = range(0,21) -> 0부터 20
+    list(rg) -> 리스트로 변경
+
+변경
+    list(집합) -> to list
+    tuple(집합) -> to tuple
+    set(리스트) -> to set
+    type(list) -> 타입 반환
+
+퀴즈4
+
+if문
+    if int(input('기온?')) > 20:
+        실행
+    elif 조건 or 조건:
+        실행
+    else:
+        실행
+
+for문
+    for i in [0,1,2,3]:
+        print('dd: {0}'.format(i))
+    
+    for i in range(0,3):
+        실행
+    
+    for i in set:
+        print('dd: {0}'.format(set))
+
+    ls = [i+100 for i in ls2]
+    
+    i는 알아서 범위를 탐색함
+
+while
+    i = 0
+    while i=2:
+        print(i)
+        i += 1
+    
+    i가 어떻게 탐색하는지 설정해야 함
+
+    while TRUE:
+        실행
+    -> 무한 루프 -> ctr c 하면 종료  or  종료 기준 설정
+
+continue & break
+    continue -> for문에서 다음 반복으로 넘어감
+    break -> for문에서 그 다음의 반복 무시하고 끝냄
+
+    n=100
+    for i in range(0,50):
+        print(i)
+        if i>30:
+            break -> i가 30 넘는 순간 for문 탈출
+
+퀴즈5
+
+함수
+    def 함수명(name, age, *language):
+        실행
+        return 값
+
+    def pf(n, a, *l):
+        print('name: {}, age: {}'.format(n,a), end=' ')
+        for lang in l:
+           print(lang, end=' ')
+    pf('lee', 25, 'r', 'c#')
+
+지역/전역 변수
+    함수 내에서 정의 -> 지역변수
+    'global 변수' -> 함수에서 전역변수 사용
+
+입출력
+    print('a', 'b', sep=' vs ', end='?') -> 'a vs b?' 출력
+    print('a', 'b', file=sys.stdout) sys.stderr로도 설정 가능
+    print(a.ljust(8)) -> 8칸 확보 후 왼쪽정렬
+    print(a.zfill(3)) -> 3칸으로 채워야 하고, 빈 공간은 0으로 채움
+    print('{0: >10}'.format(500)) -> 10칸 확보, 오른쪽 정렬, 빈자리는 빈공간
+    print('{0: >-10}'.format(500)) -> 양수면 +, 음수면 - 붙여서 출력
+    print('{0:_<10}'.format(500)) -> 10칸 확보, 왼쪽 정렬, 빈자리는 _로 채움
+    print('{0:,}'.format(50000)) -> 세자리마다 쉼표 처리
+    print('{0:^<+30,}'.format(2000000)) -> 30칸 확보, 부호 표시, 3자리마다 쉼표,
+                                            왼쪽 정렬, 빈자리는 ^로 채움
+    
+    print('{0:2f}'.format(5/3)) -> 소수점 둘째자리까지 표시
+
+파일 입출력
+    파일변수 = open('파일이름.txt', 'w', encoding='utf8') -> 불러오기(w: 덮어쓰기, a: 이어쓰기)
+    print('aaa', file=파일변수) -> 수정
+    파일변수.close() -> 닫기
+
+    파일변수 = open('파일이름.txt', 'a', encoding='utf8') -> 불러오기(a: 이어쓰기)
+    파일변수.write('aaa)
+    파일변수.close() -> 닫기
+
+    파일변수 ,,,, -> 'r'로 열기
+    print(파일변수.read()) -> 읽기
+    print(파일변수.readline(7)) -> 한줄만 읽기
+    while True:
+        line = 파일.readline()
+        if not line:
+            break
+        print(line)
+    파일변수.close()
+
+    'r'로 열기
+    lines = 파일.readlines()
+    for line in lines:
+        print(line)
+    파일.close()
+
+    with open('ddd.txt', 'r', encoding='utf8') as 파일: -> close 안해도 됨
+        print(파일.read())
+
+pickle -> import 해야 함
+    파일 = open('ddd.pickle', 'wb') -> 쓰기 (dict->파일)
+    dict = {'dd':dddd, 'ee':['tttt', 'qe']}
+    print(dict)
+    pickle.dump(dict, 파일)
+    파일.close()
+
+    파일 = ,,,, 'rb' -> 읽기 (파일->dict)
+    dict = pickle.load(파일)
+    파일.close()
+
+    with open('dddd.pickle', 'rb') as 파일: -> close 안해도 됨
+        print(pickle.load(파일))
+
+퀴즈7
+
+클래스
+    class unit:
+        def __init__(self, name, hp): -> 객체 만들때 name hp 이 두 변수 정도는 정의해둬야 함
+            self.name=name
+            self.hp=hp
+            sel.seize = False -> 위에 __init__에 없는 변수도 정의 가능
+            print('{} 유닛 생성'.format(self.name))
+            print('체력 {}'.format(self.hp))
+    mr1 = unit('mr', 40)
+    mr2 = unit('mr', 40)
+    tank1 = unit('tk', 150)
+
+    __init__-> 파이썬에서 정의, 객체 생선되면 바로 실행
+    name hp dm -> 멤버변수 -> tank1.dm 처럼 외부에서 사용 가능
+    tank2.clocking = True 처럼 외부에서 새로운 변수 정의 가능
+
+(다중)상속
+    class Unit:
+        def __init__(self, name, hp):
+            self.name = name
+            self.hp = hp
+
+    class AttackUnit(Unit): # Unit 클래스를 상속받음
+        def __init__(self, name, hp, damage):
+            Unit.__init__(self, name, hp) # 부모 클래스의 생성자 호출
+            self.damage = damage # 본 클래스의 생성자
+
+    class Flyable:
+        def __init__(self, flying_speed): # 공중 이동 속도
+            self.flying_speed = flying_speed
+
+        def fly(self, name, location): # 함수 호출할때 변수 설정해줘야 함
+            print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]".format(name, location, self.flying_speed))
+
+    class FlyableAttackUnit(AttackUnit, Flyable):
+        def __init__(self, name, hp, damage, flying_speed): # 이름, 체력, 공격력, 공중 이동 속도
+            AttackUnit.__init__(self, name, hp, damage) # 이름, 체력, 공격력
+            Flyable.__init__(self, flying_speed) # 공중 이동 속도
+    
+연산자 오버라이딩
+    Unit 클래스에도 move 함수 있을때, AttackUnit에서도 move를 재정의
+
+패스 -> 그냥 넘어감
+    class unit:
+        def __init__(self,name,hp):
+            pass
+
+    def start():
+        pass
+
+슈퍼
+    class flyer(unit):
+        def __init__(self,name,hp,speed):
+            super().__init__(name,hp) -> unit.__init__(self,name,hp)와 동일
+            self.speed = speed
+
+    class flyer(unit, unit2):
+        def __init__(self):
+            super().__init__() ->unit의 __init__만을 상속받음
+            unit.__init__(self)
+            unit2.__init__(self)
+            위에 super 지우고 이렇게 하면 다중 상속에서의 문제 해결
+
+퀴즈8
+
+예외처리 (except)
+    try:
+        실행
+    except ValueError:
+        실행 -> 이 에러에 대해선 예외적으로 정상 실행
+    except:
+        실행 -> 다른 모든 에러에 대해서 설정
+
+에러 발생 (raise)
+    try:
+        실행
+        if ddd :
+            raise ValueError -> 의도적 에러 발생
+    except 다른에러:
+        실행
+
+사용자 정의 예외처리
+    class 에러명(Exception): -> 에러명은 직접 만듦
+        def __init__(self, msg):
+            self.msg = msg
+        def __str__(self):
+            return self.msg
+    try:
+        실행
+        if dd :
+            raise 에러명(메시지) -> 미리 정의한 에러가 발생하고 try문 통과
+    except 에러명 as err:
+        print(err) -> 해당 에러가 됐기 때문에, 이 문장도 실행됨
+
+    class myerror(Exception):
+        def __init__(self, msg):
+            self.msg = msg
+    try:
+        n = int(input('int'))
+        if n>10:
+            raise myerror('myerror')
+        print(n*2)
+    except myerror as err:
+        print(err)
+
+finally
+    try:
+        dd
+    except:
+        dd
+    finally:
+        dd -> 이건 무조건 출력
+
+퀴즈9
+
+모듈 -> 같은 폴더 내에 있어야 함
+    import theater_module (as dd) -> theater_module.py 파일 = 모듈
+        dd.price(3) -> 파일 내에 있는 price 함수 사용
+        dd.price.real_price() -> 파일 내, price 클래스 내, real_price 함수 사용
+    
+    from theater_module import *
+        price(3) -> 편하게 함수 사용
+
+패키지
+    import folder이름.file이름 -> file: __init__.py 등
+    변수명 = folder이름.file이름.class명 -> file에 있는 class
+    변수명.def() -> file의 class 내에 있음
+
+__all__ -> 다른 folder 내 __init__.py file 내에서 설정해줘야 함
+    __all__ = ['file이름'] -> 이 파일은 공개처리됨 -> from 폴더 import 파일 사용가능
+
+모듈 직접 실행
+    한 file 내에서 클래스 정의
+    if __name__ == '__main__':
+        print('직접실행')
+    
+    else:
+        print('외부에서 실행')
+    -> 이러면 '직접실행' 출력됨
+
+패키지 모듈 위치
+    import inspect
+    import random
+    print(inspect.getfile(random)) -> random 패키지의 위치 조회
+
+pip install
+    pypi 사이트 접속 -> 패키지 구할 수 있음
+        beautifulsoup4 -> 스크랩 지원
+    설치 - 터미널에서 'pip install beautifulsoup4'
+    터미널 'pip list' -> 설치된 패키지 조회
+    ,, 'pip install --upgrade 패키지' -> 패키지 업그레이드
+    ,, 'pip uninstall 패키지' -> 패키지 삭제
+    cls -> 터미널 정리
+
+내장함수 (빌트 인 f)
+    input('dddd')
+    print(dir()) -> 객체가 가지는 변수와 함수 조회
+    print(dir(random)) -> random 에서 쓸수 있는 것들 조회
+    print(dir(리스트명)) -> 리스트로 할수 있는 것들 조회
+
+외장함수 (import 후 사용, 모듈)
+    import glob
+    print(glob.glob('*.py')) -> 확장자가 py인 파일 조회
+
+    import os
+    print(os.getcwd()) -> 현재 디렉토리 조회
+    os.path.exists(폴더명) -> 해당 폴더 있는지 확인 (t/f)
+    os.makedirs(폴더명) -> 폴더 생성
+    os.rmdir(폴더명) -> 폴더 삭제
+
+    import time
+    print(time.localtime()) -> 현재시간
+
+퀴즈10
+
