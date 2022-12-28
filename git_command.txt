@@ -1,4 +1,4 @@
-git init
+git init -> git add . -> git commit -m 'ddd' -> git push -u 주소 main
 
 git add app.txt
 git add .
@@ -29,8 +29,8 @@ git push -u 주소 main
 git remote add 변수 주소 -> 주소를 변수로 저장
 git clone 주소
 git pull 주소 브랜치
-
-
+git pull origin main -> 오류시 
+https://github.com/PyungHeeLee/lee.git
 
 git stash (list)
 git stash clear
